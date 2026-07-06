@@ -1,0 +1,82 @@
+<!-- REQUIRES jszip.js IN THIS FOLDER TO FUNCTION https://stuk.github.io/jszip/ -->
+<!-- REQUIRES FileSaver.js IN THIS FOLDER TO FUNCTION https://github.com/eligrey/FileSaver.js/ -->
+
+<!doctype html>
+<head>
+	<title>Speedo Digit Generator</title>
+	<link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body>
+	<!-- MARK: Body -->
+	<h1>Speedo Digit Generator</h1>
+	<p class="subheading"
+		>Upload a font to generate images for a TF2 speedo VTF</p
+	>
+
+	<div class="form-container">
+		<label for="speedo-type-select">Speedo Type</label>
+		<select id="speedo-type-select" name="speedo-type-select">
+			<option value="frame11">0-9</option>
+			<option value="frame111">0-99</option>
+			<option value="frame3501">0-3500</option>
+		</select>
+
+		<label for="upload-font">Font </label>
+		<input
+			type="file"
+			accept=".ttf, .otf"
+			id="upload-font"
+			name="upload-font"
+		/>
+
+		<label for="font-size-input">Font Size </label>
+		<input
+			type="number"
+			value="64"
+			id="font-size-input"
+			name="font-size-input"
+		/>
+
+		<label for="pad-input">Padding Amt </label>
+		<input
+			type="number"
+			value="0"
+			id="pad-input"
+			name="pad-input"
+		/>
+
+		<div class="resolution-inputs-container">
+			<p>VTF Resolution</p>
+			<label for="vtf-res-x-input">x</label>
+			<input
+				type="number"
+				value="64"
+				step="16"
+				min="8"
+				id="vtf-res-x-input"
+				name="vtf-res-x-input"
+			/>
+			<label for="vtf-res-y-input">y</label>
+			<input
+				type="number"
+				value="64"
+				step="16"
+				min="8"
+				id="vtf-res-y-input"
+				name="vtf-res-y-input"
+			/>
+		</div>
+
+		<label for="debug-checkbox">Debug</label>
+		<input
+			type="checkbox"
+			id="debug-checkbox"
+			name="debug-checkbox"
+		/>
+
+		<button id="preview-btn">Preview</button>
+		<button id="download-btn">Download</button>
+	</div>
+	<script type="module" src="/src/main.js"></script>
+</body>
